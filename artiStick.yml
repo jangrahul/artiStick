@@ -1,0 +1,65 @@
+template: Hello, %s!
+
+defaultName: Stranger
+
+# Server configuration
+server:
+  applicationConnectors:
+    - type: http
+      port: 9000
+  adminConnectors:
+    - type: http
+      port: 9001
+
+amqp:
+  host: localhost
+  port: 5672
+  username: rahul.jangra
+  password: jangrahul
+
+flickr:
+  apiKey: f318c639355988ab7fc0bba8e2f6c1f3
+  apiSecret: 209e829e2eb1dca5
+  accessToken: 72157703679111231-d701dbf9d699113f
+  accessTokenSecret: 0b3a37992a9d6efc
+
+database:
+  # the name of your JDBC driver
+  driverClass: org.postgresql.Driver
+
+  # the username
+  user: rahul.jangra
+
+  # the password
+  password:
+
+  # the JDBC URL
+  url: jdbc:postgresql://localhost:5432/artistick
+
+  # any properties specific to your JDBC driver:
+  properties:
+    charSet: UTF-8
+
+  # the maximum amount of time to wait on an empty pool before throwing an exception
+  maxWaitForConnection: 1s
+
+  # the SQL query to run when validating a connection's liveness
+  # validationQuery: "/* MyService Health Check */ SELECT 1"
+
+  # the timeout before a connection validation queries fail
+#  validationQueryTimeout: 3s
+
+  # the minimum number of connections to keep open
+  minSize: 8
+
+  # the maximum number of connections to keep open
+  maxSize: 32
+
+  # whether or not idle connections should be validated
+  checkConnectionWhileIdle: false
+
+  # the amount of time to sleep between runs of the idle connection validation, abandoned cleaner and idle pool resizing
+  evictionInterval: 10s
+
+  # the minimum amount of time an connection must sit idle in the pool before it is eligible for eviction
+  minIdleTime: 1 minute
